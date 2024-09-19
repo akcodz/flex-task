@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .grid-container {
+        height: 100%;
+        width: 100%;
+        background: #b1b1b1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: .8rem;
+        padding: 2rem;
+        grid-template-areas:
+          "item1 item1 item2"
+          "item3 item3 item2"
+          "item4 item4 item2";
+      }
+      .parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .8rem;
+        padding: 1rem;
+      }
+      .parent-1 {
+        grid-column: item1;
+      }
+      .parent-2 {
+        grid-column: 3; /* Position in the 3rd column */
+        grid-row: 1 / span 3; /* Span across 3 rows */
+        flex-direction: column;
+        
+      }
+      .parent-3 {
+        grid-column: item3;
+      }
+      .parent-4 {
+        grid-column: item4;
+   
+      }
+      .child {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        border-radius: 0.5rem;
+      }
+
+      /* Extra class for each child */
+      .child-1 {
+        background-color: #e74c3c; /* Red */
+        width: 100%;
+      }
+      .child-2 {
+        background-color: #8e44ad; /* Purple */
+      }
+      .child-3 {
+        background-color: #f39c12; /* Orange */
+      }
+      .child-4 {
+        background-color: #2980b9; /* Blue */
+        width: 100%;
+      }
+      .child-5 {
+        background-color: #27ae60; /* Green */
+        width: 100%;
+      }
+      .child-6 {
+        background-color: #c0392b; /* Dark Red */
+      }
+      .child-7 {
+        background-color: #d35400; /* Dark Orange */
+      }
+      .child-8 {
+        background-color: #2ecc71; /* Light Green */
+        width: 100%;
+      }
+      .child-9 {
+        background-color: #34495e; /* Dark Blue */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="parent parent-1">
+        <div class="child child-1">1</div>
+        <div class="child child-2">2</div>
+        <div class="child child-3">3</div>
+      </div>
+      <div class="parent parent-2">
+        <div class="child child-4">4</div>
+        <div class="child child-5">5</div>
+      </div>
+      <div class="parent parent-3">
+        <div class="child child-6">6</div>
+        <div class="child child-7">7</div>
+      </div>
+      <div class="parent parent-4">
+        <div class="child child-8">8</div>
+        <div class="child child-9">9</div>
+      </div>
+    </div>
+  </body>
+</html>
